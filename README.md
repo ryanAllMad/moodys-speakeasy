@@ -6,3 +6,6 @@ This project showcases my design and frontend capabilities. I developed the appl
 
 ## Figma Design
 [See the design here](https://www.figma.com/design/YMtzNcpy6LbiOuW0FayKQ1/Moody-Floral-Mood-Board?node-id=21-123&t=NX40WbUfGVuyUZdv-1)
+
+## Deployed App
+[See the completed work here](https://moodys-speakeasy.vercel.app/)
