@@ -17,14 +17,14 @@ export default function Home() {
 
 	useEffect(() => {
 		if (typeof window !== undefined) {
-			const windowWidth = window.innerWidth
+			const windowWidth = window.innerWidth;
 			window.addEventListener('scroll', () => {
 				const scrollVal = window.scrollY;
 				if (windowWidth < 999) {
 					if (scrollVal <= 900) {
 						setScrollTop(300 - scrollVal);
 					} else {
-						setScrollTop(-600)
+						setScrollTop(-600);
 					}
 				} else {
 					setScrollTop(300 - scrollVal);
@@ -45,7 +45,12 @@ export default function Home() {
 			<main className={styles.main}>
 				<section className={styles.sectionMainOne}>
 					<h1>Welcome to Moody&apos;s Floral Speakeasy</h1>
-					<button onClick={() => setShadow('none')} style={{ boxShadow: shadow }}>Menu</button>
+					<button
+						onClick={() => setShadow('none')}
+						style={{ boxShadow: shadow }}
+					>
+						Menu
+					</button>
 				</section>
 				<section className={styles.sectionMainTwo}>
 					<Image
@@ -78,15 +83,20 @@ export default function Home() {
 				<AnimateSection classes={styles.sectionMainFive}>
 					<h2>Our Story</h2>
 					<p>
-						abs lsiru aieiue alifieafipeuf aoihfej alifieafipeuf
-						aoihfej LSRgjhirjg aliefjuea aliefupaue aiefjpieu
-						aiefpqe aiefjpwei alkgh pauf pojup9wue4 lskjhgoiu
-						aoifp9uw gsjrg o8u gsjgrp sprug sjrg s9uf sirugpurg
-						slhgr ssiu sprugps gpsrug spgu rpsiurg s psug{' '}
+						I developed the application by creating a mood board,
+						then a ux design, and then a prototype in Figma.
+						Following that I built the Next.js app and deployed it
+						to Vercel. The entire process took 2 days. The front end
+						application features light and dark mode, CSS
+						Transitions, and scroll animations. The app was built
+						with NextJS, Typescript, React, and CSS3.{' '}
 					</p>
-          <p className="resLink">
-            <a href="#"><ArrowForwardIosIcon />Make a reservation</a>
-          </p>
+					<p className='resLink'>
+						<a href='#'>
+							<ArrowForwardIosIcon />
+							Make a reservation
+						</a>
+					</p>
 				</AnimateSection>
 				<AnimateSection classes={styles.sectionMainSix}>
 					<IconGroup
