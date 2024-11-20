@@ -1,13 +1,6 @@
 :root {
-  --background: #ffffff;
+  --background: #F9E6BA;
   --foreground: #242C2E;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #242C2E;
-    --foreground: #ffffff;
-  }
 }
 
 html,
@@ -62,10 +55,8 @@ button {
   margin-top: 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+main section {
+  max-height: 700px;
 }
 /*CSS TRANSITIONS */
 .animate > * {
@@ -106,4 +97,33 @@ li a:focus:after,
 .resLink a:focus:after{ 
   width: 100%; 
   left: 0; 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #242C2E;
+    --foreground: #ffffff;
+  }
+  html {
+    color-scheme: dark;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1400px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  main section {
+    grid-column: 1 / span 12 !important;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
 }

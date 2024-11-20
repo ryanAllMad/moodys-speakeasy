@@ -17,9 +17,18 @@ export default function Home() {
 
 	useEffect(() => {
 		if (typeof window !== undefined) {
+			const windowWidth = window.innerWidth
 			window.addEventListener('scroll', () => {
 				const scrollVal = window.scrollY;
-				setScrollTop(300 - scrollVal);
+				if (windowWidth < 999) {
+					if (scrollVal <= 900) {
+						setScrollTop(300 - scrollVal);
+					} else {
+						setScrollTop(-600)
+					}
+				} else {
+					setScrollTop(300 - scrollVal);
+				}
 			});
 		}
 	}, []);
@@ -50,7 +59,7 @@ export default function Home() {
 				<section className={styles.sectionMainThree}>
 					<Image
 						className={styles.floralBorder}
-						style={{ marginTop: scrollTop }}
+						style={{ transform: `translateY(${scrollTop}px)` }}
 						src='/moodyborder.png'
 						alt=''
 						width={1000}
