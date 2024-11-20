@@ -55,6 +55,8 @@
 .sectionMainTwo {
   grid-column: 7 / span 5;
   grid-row: 1;
+  z-index: -1;
+  -webkit-box-reflect: below 8px linear-gradient(transparent, #242C2E);
 }
 .sectionMainThree {
   grid-column: 1 / span 7;
@@ -70,6 +72,7 @@
   display: flex;
   flex-flow: column;
   justify-content: center;
+  background: #242c2e59;
 }
 .sectionMainFive > * {
   opacity: 0;

@@ -6,50 +6,37 @@ import styles from './page.module.css';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CallIcon from '@mui/icons-material/Call';
+import Header from '@/components/Header';
 import IconGroup from '@/components/IconGroup';
-import AnimateSection from '../components/AnimateSection'
+import AnimateSection from '../components/AnimateSection';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function Home() {
-  const [scrollTop, setScrollTop] = useState(300)
-  const [shadow, setShadow] = useState('none')
+	const [scrollTop, setScrollTop] = useState(300);
+	const [shadow, setShadow] = useState('none');
 
-  useEffect(() => {
-    if (typeof window !== undefined) {
-    window.addEventListener('scroll', () => {
-      const scrollVal = window.scrollY;
-      setScrollTop(300 - scrollVal)
-    })
-  }
-  }, [])
-  useEffect(() => {
-    if(scrollTop < 260) {
-      setShadow('5px 5px 20px #F9E6BA')
-    } else {
-      setShadow('none')
-    }
-  }, [scrollTop])
+	useEffect(() => {
+		if (typeof window !== undefined) {
+			window.addEventListener('scroll', () => {
+				const scrollVal = window.scrollY;
+				setScrollTop(300 - scrollVal);
+			});
+		}
+	}, []);
+	useEffect(() => {
+		if (scrollTop < 260) {
+			setShadow('5px 5px 20px #F9E6BA');
+		} else {
+			setShadow('none');
+		}
+	}, [scrollTop]);
 	return (
 		<div className={styles.page}>
-			<header className={styles.header}>
-				<Image
-					src='/moody-logo.png'
-					width={135}
-					height={80}
-					alt='to home'
-				/>
-				<section className={styles.desktopMenu}>
-					<ul>
-						<li>Home</li>
-						<li>Menu</li>
-						<li>Reviews</li>
-						<li>Events</li>
-					</ul>
-				</section>
-			</header>
+			<Header />
 			<main className={styles.main}>
 				<section className={styles.sectionMainOne}>
 					<h1>Welcome to Moody&apos;s Floral Speakeasy</h1>
-					<button style={{boxShadow: shadow}}>Menu</button>
+					<button onClick={() => setShadow('none')} style={{ boxShadow: shadow }}>Menu</button>
 				</section>
 				<section className={styles.sectionMainTwo}>
 					<Image
@@ -63,7 +50,7 @@ export default function Home() {
 				<section className={styles.sectionMainThree}>
 					<Image
 						className={styles.floralBorder}
-            style={{marginTop: scrollTop}}
+						style={{ marginTop: scrollTop }}
 						src='/moodyborder.png'
 						alt=''
 						width={1000}
@@ -79,8 +66,8 @@ export default function Home() {
 						height={550}
 					/>
 				</section>
-        <AnimateSection classes={styles.sectionMainFive}>
-        <h2>Our Story</h2>
+				<AnimateSection classes={styles.sectionMainFive}>
+					<h2>Our Story</h2>
 					<p>
 						abs lsiru aieiue alifieafipeuf aoihfej alifieafipeuf
 						aoihfej LSRgjhirjg aliefjuea aliefupaue aiefjpieu
@@ -88,9 +75,12 @@ export default function Home() {
 						aoifp9uw gsjrg o8u gsjgrp sprug sjrg s9uf sirugpurg
 						slhgr ssiu sprugps gpsrug spgu rpsiurg s psug{' '}
 					</p>
-        </AnimateSection>
-        <AnimateSection classes={styles.sectionMainSix}>
-        <IconGroup
+          <p className="resLink">
+            <a href="#"><ArrowForwardIosIcon />Make a reservation</a>
+          </p>
+				</AnimateSection>
+				<AnimateSection classes={styles.sectionMainSix}>
+					<IconGroup
 						icon={<LocationOnIcon sx={{ fontSize: '5rem' }} />}
 						heading='Location'
 						text='1234 Blackberry rd.'
@@ -105,7 +95,7 @@ export default function Home() {
 						heading='Reservations'
 						text='999-999-9999'
 					/>
-        </AnimateSection>
+				</AnimateSection>
 			</main>
 		</div>
 	);
