@@ -100,6 +100,7 @@
   grid-row: 1;
   z-index: -1;
   -webkit-box-reflect: below 8px linear-gradient(transparent, #F9E6BA);
+  margin-bottom: 1.5rem;
 }
 .sectionMainThree {
   grid-column: 1 / span 7;
