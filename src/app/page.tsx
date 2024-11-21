@@ -12,7 +12,7 @@ import AnimateSection from '../components/AnimateSection';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function Home() {
-	const [scrollTop, setScrollTop] = useState(300);
+	const [scrollTop, setScrollTop] = useState(180);
 	const [shadow, setShadow] = useState('none');
 
 	useEffect(() => {
@@ -22,12 +22,12 @@ export default function Home() {
 				const scrollVal = window.scrollY;
 				if (windowWidth < 999) {
 					if (scrollVal <= 900) {
-						setScrollTop(300 - scrollVal);
+						setScrollTop(180 - scrollVal);
 					} else {
-						setScrollTop(-600);
+						setScrollTop(-780);
 					}
 				} else {
-					setScrollTop(300 - scrollVal);
+					setScrollTop(180 - scrollVal);
 				}
 			});
 		}
